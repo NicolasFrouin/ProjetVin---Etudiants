@@ -43,13 +43,15 @@ namespace ProjetMetier
         public double ValeurDeLaCave(string unNomDeCave)
         {
             double prix = 0;
-            foreach (Bouteille b in LesCaves[unNomDeCave])
-            {
-                prix += b.QuantiteBouteille * b.LeVin.PrixDuVin;
-            }
-            return prix;
+            //foreach (Bouteille b in LesCaves[unNomDeCave])
+            //{
+            //    prix += b.QuantiteBouteille * b.LeVin.PrixDuVin;
+            //}
+            //return prix;
 
             // faut tester une autre arnaque que celle d'au dessus
+            LesCaves[unNomDeCave].ForEach(b => prix += b.QuantiteBouteille * b.LeVin.PrixDuVin);
+            return prix;
         }
     }
 }
